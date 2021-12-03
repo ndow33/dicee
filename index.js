@@ -4,6 +4,27 @@ var diceImages = ['dice1.png','dice2.png','dice3.png','dice4.png','dice5.png','d
 var player1ScoreCount = 0
 var player2ScoreCount = 0
 
+function winningCard1(){
+    player1Card.classList.add('text-white');
+    player1Card.classList.add('bg-success');
+    player2Card.classList.remove('text-white');
+    player2Card.classList.remove('bg-success');
+}
+
+function winningCard2(){
+    player2Card.classList.add('text-white');
+    player2Card.classList.add('bg-success');
+    player1Card.classList.remove('text-white');
+    player1Card.classList.remove('bg-success');
+}
+
+function draw(){
+    player1Card.classList.remove('text-white');
+    player1Card.classList.remove('bg-success');
+    player2Card.classList.remove('text-white');
+    player2Card.classList.remove('bg-success');
+}
+
 
 
 function roll(elementToChange){
@@ -23,19 +44,29 @@ function roll(elementToChange){
     //get the player's current scores
     var player1Score = document.getElementById("player1Score");
     var player2Score = document.getElementById("player2Score");
+    //get the player's cards
+    var player1Card = document.getElementById("player1Card");
+    var player2Card = document.getElementById("player2Card");
+
     //Announce the winner
     if (dice1>dice2){
         winner.innerText = "Player 1 Wins!!!";
         player1ScoreCount++
         player1Score.innerHTML = player1ScoreCount;
+        //Change the color of the cards to red and green
+        winningCard1();
     }
     if (dice1<dice2){
         winner.innerText = "Player 2 Wins!!!";
         player2ScoreCount++
         player2Score.innerHTML = player2ScoreCount;
+        //Change the color of the cards to red and green
+        winningCard2();
     }
     if (dice1===dice2){
         winner.innerText = "It's a Draw - Roll Again!"
+        //Change the color of the cards to blue
+        draw();
     }
     
 }
