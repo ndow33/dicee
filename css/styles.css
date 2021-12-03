@@ -1,0 +1,30 @@
+.center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+    text-align: center;
+    background-color: #363433;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.btn{
+    background-color: #363433;
+    font-size: 30px;
+    color: #88db96;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+.header{
+    font-size: 60px;
+    color: #88db96;
+}
+
+.tbl{
+    font-size: 30px;
+    color: #88db96;
+}
+
+.dice{
+    border-spacing: 30px;
+}
